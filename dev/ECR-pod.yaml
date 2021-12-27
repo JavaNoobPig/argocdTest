@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ecr-pod
+spec:
+  containers:
+  - name: my-1st-aws-ecr-container
+    image: 764625852240.dkr.ecr.ap-northeast-1.amazonaws.com/hello-pig:latest
+    ports:
+    - containerPort: 8080
+  imagePullSecrets:
+  - name: regcred
